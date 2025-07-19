@@ -132,6 +132,7 @@ if "%mule_peb_trample%"=="1" (
   %compile% ..\src\mule\mule_peb_trample.c %compile_link% %out%mule_peb_trample_new.exe || exit /b 1
   move mule_peb_trample_new.exe mule_peb_trample.exe
 )
+if "%comp_db%"=="1"                     set didbuild=1 && %compile% -MJ ..\compile_commands.json ..\src\raddbg\raddbg_main.c
 popd
 
 :: --- Warn On No Builds ------------------------------------------------------
